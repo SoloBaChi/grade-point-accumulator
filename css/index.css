@@ -1,0 +1,83 @@
+
+/* =======================
+Default Styles
+==========================*/
+html{
+box-sizing:border-box;
+}
+*,
+*::after,
+*::before{
+box-sizing:inherit;
+padding:0;
+margin:0;
+}
+img{
+width:100%;
+}
+a{
+text-decoration:none;
+display:block;
+padding:0.7rem;
+}
+button{
+display:inline-block;
+text-decoration:center;
+padding:0.7rem;
+/* border:none; */
+box-shadow:none;
+cursor: pointer;
+width:100%;
+}
+section{
+padding:2rem 5%;
+}
+
+
+/* =================================
+Main Styles
+===================================*/
+table{
+width:100%;
+border-collapse: collapse;
+}
+table,
+th,
+td{
+border:1px solid #ccc;
+}
+th,
+td{
+padding:0.7rem;
+font-weight:600;
+text-align:center;
+}
+/* table tr{
+background-color:#f8f8f8;
+} */
+table tr:nth-child(2n + 2){
+background-color:#dddddd;
+color:teal;
+}
+.flex-container>*{
+margin-bottom:1rem;
+margin-top:1rem;
+}
+
+
+
+
+/* =========================================
+ for large Desktop devent
+============================================
+ */
+@media(min-width:980px){
+.flex-container{
+display:flex;
+flex-flow:row wrap;
+justify-content:flex-end;
+gap:1.2rem;
+
+}
+}
+

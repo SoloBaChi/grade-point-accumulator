@@ -104,3 +104,62 @@ function isCorrectGpScale(scale){
     }
     
     calculateCPGA(studentRecords,5)
+
+
+    // code to add tale row
+    const addRow  = document.querySelector(".add-row"),
+          deleteRow = document.querySelector(".delete-row"),
+          table = document.querySelector("table#template-table");
+    console.log(addRow)
+    console.log(table)
+
+    const handleAddRow = () => {
+    // some ttable parameters
+    const tableIndex = -1;
+    let tableRow = table.insertRow(tableIndex);
+    let snCounter = 1;
+    
+    // create an array of empty fields
+    let tableData = Array(6).fill("");
+
+    // loop through the table data field
+    for(let i = 0 ; i < tableData.length; i++){
+     let tableRowCell = tableRow.insertCell(i);
+    
+     tableRowCell.innerHTML = tableData[i]
+    }
+    // get the first element child
+    // console.log(tableRow.firstElementChild)
+    tableRow.childNodes[0].innerHTML = snCounter;
+    if(table.querySelectorAll("tr").length > 2){
+      tableRow.firstElementChild.innerText = 
+      Number(tableRow.previousElementSibling.childNodes[0].innerHTML) + 1;
+      ;
+    }
+  
+    //  if(tableRow.nextElementSibling.childNodes[0] ){
+    //  incrementCounter(counter)
+    //  console.log(counter)
+    //  tableRow.childNodes[0].innerHTML = counter;
+    //  }
+    
+    }
+    
+    // add a row
+    addRow.addEventListener("click",handleAddRow);
+
+    const handleDeleteRow = () => {
+      let table = document.querySelector("table#template-table");
+
+      if(table.querySelectorAll("tr").length > 1){
+       table.deleteRow(-1);
+      }
+    }
+
+    deleteRow.addEventListener("click",handleDeleteRow)
+
+  
+
+
+
+    // code to delete table row

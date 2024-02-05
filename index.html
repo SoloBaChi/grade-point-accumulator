@@ -5,9 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/index.js" defer></script>
     <title>Grade Point calculator</title>
+    <link rel="stylesheet" href="./css/index.css">
 
 </head>
 <body>
+
+<!-- Gp calculator table -->
+<section>
+<h2>GRADE POINT CALCULATOR</h2>
+</section>
+
+<section>
+<div class="table-container">
+    <table id="template-table">
+      <tr>
+        <th>S / N</th>
+        <th>Course Code</th>
+        <th>Course Title</th>
+        <th>Unit Load</th>
+        <th>Grade</th>
+        <th>Grade Point</th>
+      </tr>
+    </table>
+    <!-- add a table row -->
+  <div class="flex-container">
+    <div class="add-row">
+        <button>Add row</button>
+    </div>
+    <!-- delete table row -->
+    <div class="delete-row">
+        <button>Delete row</button>
+    </div>
+
+    <div class="calc-container">
+        <button>Caculate GP</button>
+    </div>
+   </div>
+</div>
+</section>
+
+<!-- calculated GP section -->
+<section>
+<div class="previuos-tables"></div>
+</section>
 
  
 
