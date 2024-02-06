@@ -21,13 +21,14 @@ display:block;
 padding:0.7rem;
 }
 button{
-display:inline-block;
+display:block;
 text-decoration:center;
 padding:0.7rem;
 /* border:none; */
 box-shadow:none;
 cursor: pointer;
-width:100%;
+width:120px;
+margin:0 auto;
 }
 section{
 padding:2rem 5%;
@@ -37,8 +38,20 @@ padding:2rem 5%;
 /* =================================
 Main Styles
 ===================================*/
+.table-container{
+max-width:1200px;
+overflow:auto;
+}
+.table-container::-webkit-scrollbar{
+width:5px;
+height:5px;
+}
+.table-container::-webkit-scrollbar-thumb{
+border-radius:8px;
+background-color:#dddddd;
+}
 table{
-width:100%;
+width:680px;
 border-collapse: collapse;
 }
 table,
@@ -68,10 +81,10 @@ margin-top:1rem;
 
 
 /* =========================================
- for large Desktop devent
+ for Tablet device
 ============================================
  */
-@media(min-width:980px){
+@media(min-width:710px){
 .flex-container{
 display:flex;
 flex-flow:row wrap;
@@ -79,5 +92,9 @@ justify-content:flex-end;
 gap:1.2rem;
 
 }
+table{
+width:100%;
+}
+
 }
 
