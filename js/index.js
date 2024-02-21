@@ -128,6 +128,7 @@ function isCorrectGpScale(scale){
     
      tableRowCell.innerHTML = tableData[i]
     }
+
     // get the first element child
     // console.log(tableRow.firstElementChild)
     tableRow.childNodes[0].innerHTML = snCounter;
@@ -136,18 +137,50 @@ function isCorrectGpScale(scale){
       Number(tableRow.previousElementSibling.childNodes[0].innerHTML) + 1;
       ;
     }
-  
-    //  if(tableRow.nextElementSibling.childNodes[0] ){
-    //  incrementCounter(counter)
-    //  console.log(counter)
-    //  tableRow.childNodes[0].innerHTML = counter;
-    //  }
+
+    
+    // check if the input key is mixture of letter and numbers
+     function isWord(words){
+      return /[A-Za-z0-9]/.test(words);
+     }
+
+     function addText(words){
+      let str = "";
+     // code to edit the added table row
+     const tableRowDatas = document.querySelectorAll("table#template-table tr td")
+     console.log(tableRowDatas)
+     for(let i=0; i < tableRowDatas.length; i++){
+      // console.log(tableRowDatas[0])
+      tableRowDatas[i].addEventListener("click",(e)=>{
+       e.target.innerText += words;
+      console.log("Yes")
+      handleAddText();
+      })
+     }
+     }
+     function handleAddText(){
+     document.addEventListener("keydown",function handleKeyPress(e){
+      const newCharacters = e.key;
+      console.log(newCharacters)
+      if(isWord(newCharacters)){
+        addText(newCharacters)
+      }
+      else{
+      return;
+      }
+     })
+    }
+
+     addText();
+    
+     
     
     }
     
     // add a row
     addRow.addEventListener("click",handleAddRow);
 
+       // code to delete table row
     const handleDeleteRow = () => {
       let table = document.querySelector("table#template-table");
 
@@ -158,8 +191,11 @@ function isCorrectGpScale(scale){
 
     deleteRow.addEventListener("click",handleDeleteRow)
 
+
+   
+
   
 
 
 
-    // code to delete table row
+ 
