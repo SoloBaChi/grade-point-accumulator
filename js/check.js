@@ -1,17 +1,24 @@
 
 
   // code to add tale row
-  const addRowButton  = document.querySelector(".add-row"),
-  deleteRowButton = document.querySelector(".delete-row"),
-  table = document.querySelector("table#template-table");
-console.log(addRowButton)
-console.log(table);
+const addRowButton  = document.querySelector(".add-row"),
+deleteRowButton = document.querySelector(".delete-row"),
+table = document.querySelector("table#template-table"),
+// get the tfoot and hide it
+tFoot = document.querySelector("tfoot");
 
-function init(){
+// hide the table footer
+tFoot.hidden = true;
 
-let insertedRows = [];
+// console.log(tFoot)
+
+// let insertedRows = [];
+
+// local storgge
 let storage  = [];
 
+
+function init(){
 let data = {
 id:"",
 sN:"",
@@ -32,13 +39,15 @@ return randomId;
 
 
 // add a table row and create a new object
-function addRow(){
-let copiedRowData = {...data, id:generateRandomId(),semester:"first semester",gradePoint:"5.0"};
+function addRow(e){
+e.preventDefault();
+let copiedRowData = {...data, id:generateRandomId(),semester:"first semester",gradePoint:"5.0",sN:storage.length + 1};
 
 // spread all the values of the copied row data
 // const {id,sN,courseCode,courseTitle,unitLoad,grade,gradePoint,semester} = copiedRowData;
 
-storage = [...storage,copiedRowData]
+storage = [...storage,copiedRowData] 
+// storage = [{...copiedRowData}] 
 let tr = document.createElement("tr");
 
 // using imperative pattren
@@ -56,46 +65,50 @@ let tr = document.createElement("tr");
 // }
 // using declarative pattern
 storage.forEach((item,index,arr)=>{
-tr.id = item.id; tr.className = 'table-row';
+// destructure the items property
+const {id,sN, courseCode, courseTitle, unitLoad, grade, gradePoint, semester} = item;
+tr.id = id; tr.className = 'table-row';
+
 
 let trData = `
- <td><div class="row-data">${arr.length}</div></td>
- <td><div class="row-data">${item.courseCode}</div></td>
- <td><div class="row-data">${item.courseTitle}</div></td>
- <td><div class="row-data">${item.unitLoad}</div></td>
- <td><div class="row-data">${item.grade}</div></td>
- <td><div class="row-data">${item.gradePoint}</div></td>
- <td><div class="row-data">${item.semester}</div></td>
+ <td><div data-sn="${sN}" class="row-data" data-name="sN" data-id="${id}">${sN}</div></td>
+ <td><div data-sn="${sN}" class="row-data" data-name="courseCode" data-id="${id}">${courseCode}</div></td>
+ <td><div data-sn="${sN}" class="row-data" data-name="courseTitle" data-id="${id}">${courseTitle}</div></td>
+ <td class="unit"><div data-sn="${sN}" class="row-data" data-name="unitLoad" data-id="${id}">${unitLoad}</div></td>
+ <td class="grade"><div data-sn="${sN}" class="row-data" data-name="grade" data-id="${id}">${grade}</div></td>
+ <td><div data-sn="${sN}" class="row-data" data-name="gradePoint" data-id="${id}">${gradePoint}</div></td>
+ <td><div data-sn="${sN}" class="row-data" data-name="semester" data-id="${id}">${semester}</div></td>
  <td class="options">
  <span class="edit-btn">
- <a href="#" class="btn-link" row-id=${item.id}>edit</a>
+ <a href="#" class="btn-link" row-id="${id}">edit</a>
  </span>
  <span class="save-btn">
- <a href="#" class="btn-link" row-id=${item.id}>save</a>
+ <a href="#" class="btn-link" row-id="${id}">save</a>
  </span>
  <span class="cancel-btn">
- <a href="#" class="btn-link" row-id=${item.id}>cancel</a>
+ <a href="#" class="btn-link" row-id="${id}">cancel</a>
  </span>
  <span class="delete-btn">
- <a href="#" class="btn-link" row-id=${item.id}>delete</a>
+ <a href="#" class="btn-link" row-id="${id}">delete</a>
  </span>
  </td>
 `
 tr.innerHTML = trData;
 
 table.querySelector("tbody").insertAdjacentElement("beforeend",tr)
-// console.log(copiedRowData)
 
 // Hide the save and cancel buttons
-document.getElementsByClassName("save-btn")[index].hidden = true
-document.getElementsByClassName("cancel-btn")[index].hidden = true
+document.getElementsByClassName("save-btn")[index].hidden = true;
+document.getElementsByClassName("cancel-btn")[index].hidden = true;
 })
 
-console.log(storage)
-
-//invoke edit row
+// invoke editRow function
 editRow()
+
+// can be changed anytime soon
+printGpValue()
 }
+
 
 // add a row when the addRow Button is clicked
 addRowButton.addEventListener("click",addRow)
@@ -121,46 +134,203 @@ deleteRowButton.addEventListener("click",deleteRow)
 //:::::::::::::::::::TODOS::::::::::::::::::::
 // edit single field data
 function editRow(){
-let rowData = Array.from(table.getElementsByClassName("row-data"));
-// console.log(rowData)
-for(let i = 0; i < rowData.length ; i++){
-rowData[i].addEventListener("click",function(e){
-// console.log("yes")
-this.setAttribute("contenteditable",true);
-this.classList.add("active")
-this.focus();
+
+// edit the signle div when clicked
+table.addEventListener("click",function(e){
+if(e.target.nodeName !== 'DIV') {
+  return
+}
+e.target.setAttribute("contenteditable",true);
+e.target.classList.add("active")
+e.target.focus();
 })
 
-// when focused out
-rowData[i].addEventListener("focusout",function(e){
-// console.log("out")
-this.setAttribute("contenteditable",false);
-this.classList.remove("active")
-})
-}
-}
+// when focused out || save a single field data
+table.addEventListener("focusout",function(e){
+  e.preventDefault();
+  if(e.target.nodeName !== 'DIV') {
+    return
+  }
+  e.target.setAttribute("contenteditable",false);
+  e.target.classList.remove("active");
 
+// to save the new enter data
+let tempStorage = {}
+let prop = e.target.dataset.name;
+let val = e.target.innerText;
+tempStorage[prop] = val;
 
-
-
+// loop through storage and edit the seleected item
+for(let item of storage){
+if(e.target.dataset.id == item.id){
 
 // save single filed data
+Object.assign(item,tempStorage)
+}
+}
 
+})
+console.log(storage)
+}
 
 
 //edit row data 
 
-
-
 // Delete a row data
 
 
+// get all records
+function getAllRecords(){
+let records = []
+let allGrades = Array.from(document.getElementsByClassName('grade'));
+let allUnits = Array.from(document.getElementsByClassName('unit'));
+
+for(let i = 0 ; i < allGrades.length; i++){
+  records.push([allGrades[i].innerText,+allUnits[i].innerText])
+}
+
+// console.log(records)
+return records;
+}
+
+
+// Do CPGA operation
+function calculateCPGA(records,scale){
+  let score = 0,
+      unitLoad = 0 ,
+      totalSCore = 0, 
+      totalUnitLoad = 0 ,
+      CPG;
+
+  /*the GP claculator calculates for 4.0 scale and 5.0 scale system*/
+  function isCorrectGpScale(scale){
+    if(scale == 4 || scale === 5){
+     return true;
+    }
+    return false; 
+    }
+  
+  if(!isCorrectGpScale(scale)){
+  // console.log(`invalid CPGA scale!!!`)
+  return `Invalid CPGA scale!!!`;
+  }
+
+  if(scale == 4){
+   for(let [key,val] of records.entries()){
+   // switch through each grade
+    switch(val[0]){
+        case "A":
+       score += 4 * val[1];
+       unitLoad += val[1];
+        break;
+        case "B":
+      score += 3 * val[1];
+      unitLoad += val[1];
+      break;
+        case "C":
+        score += 2 * val[1];
+        unitLoad += val[1];
+        break;
+        case "D":
+        score += 1 * val[1];
+        unitLoad += val[1];
+        break;
+        case "F":
+        score += 0 * val[1];
+        unitLoad += val[1];
+        break;
+        default:
+        return `Please enter a valid Grade`
+    }
+  
+   }
+   totalSCore = score;
+   totalUnitLoad = unitLoad;
+   CPG = (totalSCore / totalUnitLoad);
+   if(!isNaN(CPG)){
+    return CPG.toFixed(2);
+    }
+    return 'Please enter a valid Unit'
+  }
+
+  // for 5.0 GP scale
+   if(scale == 5){
+  //  console.log("GP 5.0")
+   for(let [key,val] of records.entries()){
+  //  console.log(val)
+   // console.log(score)
+
+   /* switch through each grade*/
+    switch(val[0]){
+        case "A":
+       score += 5 * val[1];
+       unitLoad += val[1];
+        break;
+        case "B":
+      score += 4 * val[1];
+      unitLoad += val[1];
+      break;
+        case "C":
+        score += 3 * val[1];
+        unitLoad += val[1];
+        break;
+        case "D":
+        score += 2 * val[1];
+        unitLoad += val[1];
+        break;
+        case "E":
+        score += 1 * val[1];
+        unitLoad += val[1];
+        break;
+        case "F":
+        score += 0 * val[1];
+        unitLoad += val[1];
+        break;
+        default:
+        return `Please enter a valid Grade`;
+    }
+  
+   }
+   totalSCore = score;
+   totalUnitLoad = unitLoad;
+  //  console.log(score)
+  //  console.log(totalUnitLoad)
+   CPG = (totalSCore / totalUnitLoad);
+   if(!isNaN(CPG)){
+   return CPG.toFixed(2);
+   }
+   return 'Please enter a valid Unit'
+  }
+  }
+
 
 // rough
-document.querySelector(".gp-calc-btn")
-.addEventListener("click",(e)=>{
-alert("coming soon!")
+function printGpValue(){
+const calcGpButton = document.querySelector(".gp-calc-btn");
+
+
+calcGpButton.addEventListener("click",function(e){
+const result = calculateCPGA(getAllRecords(),Math.floor(5.7));
+
+// check for the error message details
+if(result.toLowerCase().startsWith("please") || result.toLowerCase().startsWith("invalid")){
+
+//show the table footer
+tFoot.hidden = false;
+tFoot.childNodes[1].children[1].classList.remove("success")
+tFoot.childNodes[1].children[1].innerText = result;
+tFoot.childNodes[1].children[1].classList.add("error")
+}
+else{
+//show the table footer
+tFoot.hidden = false;
+tFoot.childNodes[1].children[1].innerText = result;
+tFoot.childNodes[1].children[1].classList.remove("error")
+tFoot.childNodes[1].children[1].classList.add("success")
+}
 })
+}
+// printGpValue()
 }
 
 init();
