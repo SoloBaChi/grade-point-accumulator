@@ -8,7 +8,7 @@ function isCorrectGpScale(scale){
     }
     
     
-    let studentRecords = [["A",4],["C",3],["A",2],["B",3]]
+    let studentRecords = [["A",2],["D",3]]
     function calculateCPGA(records,scale){
     let score = 0,
         unitLoad = 0 ,
@@ -16,10 +16,10 @@ function isCorrectGpScale(scale){
         totalUnitLoad = 0 ,
         CPG;
     
-    if(!isCorrectGpScale(scale)){
-    console.log(`invalid CPGA scale!!!`)
-     // return;
-    }
+    // if(!isCorrectGpScale(scale)){
+    // console.log(`invalid CPGA scale!!!`)
+    //  // return;
+    // }
 
     if(scale == 4){
      for(let [key,val] of records.entries()){
