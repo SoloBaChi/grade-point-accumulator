@@ -1,4 +1,7 @@
 
+// create a local storage memory
+localStorage.setItem("cgpaResults",JSON.stringify([]))
+
 
   // code to add tale row
 const addRowButton  = document.querySelector(".add-row"),
@@ -103,7 +106,7 @@ document.getElementsByClassName("cancel-btn")[index].hidden = true;
 })
 
 // invoke editRow function
-editRow()
+editRowData()
 
 // can be changed anytime soon
 printGpValue()
@@ -133,7 +136,7 @@ deleteRowButton.addEventListener("click",deleteRow)
 
 //:::::::::::::::::::TODOS::::::::::::::::::::
 // edit single field data
-function editRow(){
+function editRowData(){
 
 // edit the signle div when clicked
 table.addEventListener("click",function(e){
@@ -170,13 +173,15 @@ Object.assign(item,tempStorage)
 }
 
 })
-console.log(storage)
 }
 
 
-//edit row data 
 
-// Delete a row data
+
+
+//::::::::::::::edit whole  data :::::::::::::::::
+
+// :::::::::::::::Delete whole row data::::::::::::::;
 
 
 // get all records
@@ -304,12 +309,20 @@ function calculateCPGA(records,scale){
   }
 
 
-// rough
+// Print the Grade point
 function printGpValue(){
 const calcGpButton = document.querySelector(".gp-calc-btn");
 
 
 calcGpButton.addEventListener("click",function(e){
+  console.log(storage)
+
+// to check 
+const recordedResults = JSON.parse(localStorage.getItem("cgpaResults"));
+recordedResults.push(storage)
+console.log(recordedResults)
+// console.log(recordedResults)
+
 const result = calculateCPGA(getAllRecords(),Math.floor(5.7));
 
 // check for the error message details

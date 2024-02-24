@@ -50,7 +50,7 @@ border-radius:8px;
 background-color:#dddddd;
 }
 table{
-width:980px;
+width:1200PX;
 /* width:680px; */
 border-collapse: collapse;
 }
@@ -66,6 +66,9 @@ padding:0.7rem;
 font-weight:600;
 text-align:center;
 vertical-align:center;
+}
+td{
+font-size:90%;
 }
 .table-row td{
 padding:0;

@@ -1,3 +1,6 @@
+const getResults =  localStorage.getItem("cgpaResults");
+console.log(getResults)
+
 //the GP claculator calculates for 4.0 scale and 5.0 scale system
 //utils
 function isCorrectGpScale(scale){
