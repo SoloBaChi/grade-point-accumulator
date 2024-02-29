@@ -3,42 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Upload Passport</title>
+    <script src="./cropperjs/cropper.js"></script>
+    <!-- <script src="./js/cropperscript.js" defer></script> -->
+    <link rel="stylesheet" href="./cropperjs/cropper.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body class="passport-body">
-
+  <!-- <div class="main-container">
+    <div class="img-container">
+       <input type="file" id="fileInput" accept="image/*">
+       <img src="" id="crop-image" alt="">
+    </div>
+    <button id="crop-btn">crop</button>
+    <div>
+      <img src="" id="output" alt="">
+    </div>
+  </div> -->
 <div class="passport-container">
 <div class="card add-photo-card" id="add-photo-card">
   <div class="card-body">
     <button>
-    <input type="file" accept=".png,.jpg,.jpeg,.HEIC">
+    <input id="fileInput" type="file" accept="image/*">
     upload photo
    </button>
    <p>Select any qaulity image for your passport</p>
   </div>
 </div>
-<div class="card crop-photo-card">
+<div class="card crop-photo-card" id="crop-photo-card">
   <div class="card-body">
-    <h2>TODO 1</h2>
-    <p>Crop the image</p>
+     <img src="" id="crop-image" alt="">
+  </div>
+  <button id="crop-btn">Crop Photo</button>
+</div>
+<div class="card display-photo-card" id="display-photo-card">
+  <div class="card-body">
+    <img src="" id="output" alt="">
   </div>
 </div>
-<div class="card display-photo-card">
-  <div class="card-body">
-    <h2>TODO 2</h2>
-    <p>Remove the image background</p>
-  </div>
+<div class="card loader-card" id="loader-card">
+    <div class="card-body">
+      <h2>TODO 3</h2>
+    <p class="loader"></p>
+    </div>
 </div>
-<div class="card loader-card">
-    <h2>TODO 3</h2>
-    <p>show loader card</p>
-</div>
-<div class="card upload-details-card">
+<div class="card upload-details-card" id="upload-details-card">
     <h2>TODO 4</h2>
     <p>upload your details</p>
 </div>
-<div class="card successfull-upload-card">
+<div class="card successfull-upload-card" id="successfull-upload-card">
     <h2>TODO 5</h2>
     <p>succssfull submission</p>
 </div>
@@ -46,5 +59,6 @@
 <!-- end of container -->
 </div>
 
+<script src="./js/passport.js"></script>
 </body>
 </html>
