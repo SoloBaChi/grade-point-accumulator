@@ -1,0 +1,30 @@
+<!-- Below are a series of inputs which allow file selection and interaction with the cropper api -->
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.js" integrity="sha512-Zt7blzhYHCLHjU0c+e4ldn5kGAbwLKTSOTERgqSNyTB50wWSI21z0q6bn/dEIuqf6HiFzKJ6cfj2osRhklb4Og==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./js/testing.js" defer></script>
+<style>
+    img {
+  max-width: 100%; /* This rule is very important, please do not ignore this! */
+}
+
+#canvas {
+  height: 600px;
+  width: 600px;
+  background-color: #ffffff;
+  cursor: default;
+  border: 1px solid black;
+}
+</style>
+</head>
+<input type="file" id="fileInput" accept="image/*" />
+<input type="button" id="btnCrop" value="Crop" />
+<input type="button" id="btnRestore" value="Restore" />
+</p>
+<div>
+<canvas id="canvas">
+Your browser does not support the HTML5 canvas element.
+</canvas>
+</div>		
+
+<div id="result"></div>

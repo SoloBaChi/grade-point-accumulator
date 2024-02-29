@@ -65,6 +65,17 @@ color:#010216;
 
 
 
+/* CODE FOR JS */
+#loader-card,
+#display-photo-card,
+#add-photo-card,
+#crop-photo-card,
+#download-photo-card,
+#upload-details-card,
+#successfull-upload-card{
+display:none;
+}
+
 
 /* TABLET SCREEN */
 @media(min-width:710px){
