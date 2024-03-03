@@ -17,11 +17,12 @@ margin-bottom:2rem;
 .passport-container .card{
 display:flex;
 flex-direction:column;
-/* justify-content:center;
-align-items: center; */
+justify-content:center;
+align-items: center;
 height:290px;
+width:400px;
 border:2px dashed;
-background-color:#f8f8f8;
+/* background-color:#f8f8f8; */
 border-radius:10px;
 }
 .passport-container .card.display-photo-card{
@@ -31,8 +32,14 @@ padding:2rem;
 margin:auto;
 text-align:center;
 padding:1rem;
-/* height:100%; */
-overflow:hidden;
+max-height:90%;
+width:100%; 
+/* overflow:hidden; */
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+position: relative;
 }
 .passport-container .card button{
 position: relative;
@@ -70,6 +77,43 @@ color:#010216;
 
 
 
+
+/* ADD BACLGROUND COLOR */
+.passport-container .display-photo-card .img-container{
+width: fit-content;
+background-size:contain;
+}
+.passport-container .display-removed-photo-card .img-container{
+background: url("https://thumbs.dreamstime.com/b/transparent-designer-must-have-fake-background-39672616.jpg");
+width:fit-content;
+background-size:contain;
+}
+.passport-container .display-removed-photo-card .img-container.red-color{
+background-image:url("");
+background-color:#f00;
+}
+
+.passport-container .display-removed-photo-card .img-container.white-color{
+background-image:url("");
+background-color:#fff;
+}
+
+
+
+
+/* DOWNLOAD BUTTON SECTION */
+.passport-container button#uploadAnother {
+  background-color: brown;
+  padding: 10px 30px;
+  box-shadow: 0px 5px 0px 0px rgb(102, 19, 19);
+}
+.passport-container button#uploadAnother:active {
+  box-shadow: 0px 0px 0px 0px rgb(102, 19, 19);
+  transform: translateY(5px);
+}
+
+
+
 /* CODE FOR JS */
 #loader-card,
 #display-photo-card,
@@ -77,7 +121,8 @@ color:#010216;
 #crop-photo-card,
 #download-photo-card,
 #upload-details-card,
-#successfull-upload-card{
+#successfull-upload-card,
+#display-removed-photo-card{
 display:none;
 }
 
