@@ -10,17 +10,8 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body class="passport-body">
-  <!-- <div class="main-container">
-    <div class="img-container">
-       <input type="file" id="fileInput" accept="image/*">
-       <img src="" id="crop-image" alt="">
-    </div>
-    <button id="crop-btn">crop</button>
-    <div>
-      <img src="" id="output" alt="">
-    </div>
-  </div> -->
 <div class="passport-container">
+  <!-- ADD PHOTO CARD -->
 <div class="card add-photo-card" id="add-photo-card">
   <div class="card-body">
     <button>
@@ -30,27 +21,56 @@
    <p>Select any qaulity image for your passport</p>
   </div>
 </div>
+
+<!-- CROP PHOTO CARD -->
 <div class="card crop-photo-card" id="crop-photo-card">
   <div class="card-body">
      <img src="" id="crop-image" alt="">
   </div>
   <button id="crop-btn">Crop Photo</button>
 </div>
+
+<!-- DISPLAY PHOTO CARD -->
 <div class="card display-photo-card" id="display-photo-card">
-  <div class="card-body">
-    <img src="" id="output" alt="">
+  <div class="img-container card-body">
+    <img src="./images/test.jpg" id="output" alt="">
   </div>
-  <button id="upload">upload photo</button>
+  <button id="remove-bg-btn">remove background</button>
 </div>
+
+<!-- LOADER CARD -->
 <div class="card loader-card" id="loader-card">
     <div class="card-body">
     <p class="loader"></p>
     </div>
 </div>
+
+
+<!-- DISPLAY REMOVED PHOTO CARD -->
+<div class="card display-removed-photo-card" id="display-removed-photo-card">
+  <div class="img-container card-body">
+    <img src="./images/test.jpg" id="remove-bg-output" class="remove-bg-output" alt="user image">
+  </div>
+  <div style="display: flex; gap: 10px">
+    <button id="uploadAnother" class="uploadAnother">Upload Another</button>
+    <button id="red-bg" class="red-bg">red bg</button>
+    <button id="white-bg" class="white-bg" style="padding: 10px 40px">
+     white
+    </button>
+    <button class="submit-btn" style="padding: 10px 40px">
+      <a id="downloadHref" class="downloadHref" download="transparentImage"> Download </a>
+    </button>
+
+  </div>
+</div>
+
+<!-- UPLOAD USER INFOMATION -->
 <div class="card upload-details-card" id="upload-details-card">
     <h2>TODO 4</h2>
     <p>upload your details</p>
 </div>
+
+<!-- MODAL FOR SUCCESFULL UPLOAD -->
 <div class="card successfull-upload-card" id="successfull-upload-card">
     <h2>TODO 5</h2>
     <p>succssfull submission</p>

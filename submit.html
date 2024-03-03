@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apply for passport</title>
+</head>
+<body>
+    
+    <div class="form-container">
+        <form action="">
+          <span>Ensure you have made payment to the provided account number  and then click on submit</span>
+          <div class="form-field">
+            <label for="fullname">full name <span class="required">*</span></label>
+            <input type="text" id="fullname" required>
+          </div>
+          <div class="form-field">
+            <label for="payment-receipt">payment receipt <span class="required">*</span></label>
+            <input type="file" id="payment-receipt" required>
+          </div>
+          <div class="form-field">
+            <label for="passport">passport <span class="required">*</span></label>
+            <input type="file" accept="image/*" id="passport" required>
+            <span>(make sure you have cropped your passport to the require size)</span>
+          </div>
+          <div class="form-field">
+            <label for="email">email</label>
+            <input type="email" id="email">
+          </div>
+          <div class="form-field">
+            <label for="phone">phone number <span class="required">*</span></label>
+            <input type="number" id="phone" required>
+          </div>
+          <div class="form-field">
+            <label for="location">location <span class="required">*</span></label>
+            <input type="text" id="location" required>
+          </div>
+          <div class="form-field">
+            <button type="submit">submit</button>
+          </div>
+        </form>
+    </div>
+
+    <script src="./js/submit.js"></script>
+</body>
+</html>
