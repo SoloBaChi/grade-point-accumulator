@@ -1,95 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/main.js" defer></script>
-    <title>First Class Material</title>
-    <link rel="stylesheet" href="./css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Class Material</title>
+  <link rel="icon" href="./images/logo-favicon.svg" type="image/favicon">
+  <link rel="stylesheet" href="./css/index.css">
 
 </head>
 <body>
+  <header class="header-section"></header>
+  <main class="main-section">
+    <section class="hero-section">
+      <div class="flex-container-2">
+        <div class="flex-item">
+          <h5>our mission is simple!</h5>
+          <h1>providing essentials tools precisely <span class="highlited-text">when you need it</span></h1>
+          <p>Welcome to FirstClassMaterial, where support is always at your fingertips whether it's GPA checks, passport photo services, or any other academic support, count on us to be there for you every step of the way.</p>
+          <a href="#" class="cta-btn">click to know more</a>
+        </div>
+        <div class="flex-item">
+          <div class="img-container">
+            <img src="./images/hero-section-image.svg" alt="hero banner">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- What we offer -->
+    <section class="services-section">
+      <h2>What first class material has to offer</h2>
+      <p>Because we're here to make your academic journey smoother, simpler, and more successful.</p>
+      <h6>passport tool</h6>
+      <div class="flex-container-2 passport">
+        <div class="flex-item">
+          <h2>revolutionize your passport photo experience and save money</h2>
+          <p>With our platform, you can skip the tedious trips to photographers,  take and book your passport photo conveniently from home and Spend your time on what matters most while effortlessly meeting passport photo requirements. Not only does this save you valuable time, but it also saves you money on costly photo services.</p>
+          <a class="cta-btn" href="./passport.html">get passport</a>
+        </div>
+        <div class="flex-item">
+          <div class="img-container">
+            <img src="./images/passport-hero-image.svg" alt="passport banner">
+          </div>
+        </div>
+      </div>
+      <div class="flex-container-2 gp">
+        <div class="flex-item">
+          <img src="./images/grade-point-label2.svg" alt="grade point label">
+          <div class="calculated-gp">
+            <h5>Your CGPA</h5>
+            <div class="gp-value">
+              <h4>4.8</h4>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item">
+          <h6>gp calculator tool</h6>
+          <h2>Get precision in Every Calculation</h2>
+          <p>Our grade point calculator offers reliable precision through advanced algorithms, benefiting students, educators, and institutions alike. Users can confidently compute GPAs, track progress, and identify areas for improvement. Experience clarity and confidence in your academic journey with this efficient tool.</p>
+          <a class="cta-btn" href="./calculate-gp.html">calculate your GP</a>
+        </div>
+      </div>
+    </section>
 
-<!-- Gp calculator table -->
-<section>
-<h1>First Class Material</h1>
-</section>
-
-<section>
-<div class="table-container">
-    <table id="template-table">
-      <tr>
-        <th>S / N</th>
-        <th>Course Code</th>
-        <th>Course Title</th>
-        <th>Unit Load</th>
-        <th>Grade</th>
-        <th>Grade Point</th>
-        <th>Semester</th>
-        <th>Options</th>
-      </tr>
-
-      <tfoot>
-        <td>Your CPGA</td>
-        <td colspan="8"></td>
-      </tfoot>
-    </table>
-    <!-- add a table row -->
-  <div class="flex-container">
-    <div class="add-row">
-        <button class="btn">Add row</button>
-    </div>
-    <!-- delete table row -->
-    <div class="delete-row">
-        <button class="btn">Delete row</button>
-    </div>
-
-    <div class="calc-container">
-        <button class="gp-calc-btn btn">Caculate GP</button>
-    </div>
-   </div>
-</div>
-</section>
-
-<!-- calculated GP section -->
-<section>
-<div class="previuos-tables"></div>
-<h3>Follow the instruction below to calculate your GP</h3>
-<ul>
-  <li>Click on add row buttton to add a row</li>
-  <li>Tab on each cell to edit the contents that fits your semester result</li>
-  <li>Click on save to print</li>
-  <li>Click on save to print</li>
-  <li>Others coming..</li>
-</ul>
-</section>
+    <!-- WHY US -->
+    <section class="why-us-section">
+     <h6>why use first class material</h6>
+     <h2>A seamless experience for both <br> you and your academic journey</h2>
+     <div class="flex-container-4">
+      <div class="flex-item">
+        <div class="img-container">
+          <img src="./images/accuracy-icon.svg" alt="accurancy">
+        </div>
+        <h6>accuracy</h6>
+        <p>Ensure precision and reliability in every aspect of your academic journey, from passport submissions to GPA calculations.</p>
+      </div>
+      <div class="flex-item">
+        <div class="img-container">
+          <img src="./images/comprehensible-icon.svg" alt="accurancy">
+        </div>
+        <h6>comprehensive solutions</h6>
+        <p>Access a wide range of tools and resources tailored specifically for students, including passport management, GPA calculation, and more.</p>
+      </div>
+      <div class="flex-item">
+        <div class="img-container">
+          <img src="./images/efficiency-icon.svg" alt="accurancy">
+        </div>
+        <h6>efficiency</h6>
+        <p>Streamline your academic tasks and processes, saving time and effort with our intuitive and user-friendly platform.</p>
+      </div>
+      <div class="flex-item">
+        <div class="img-container">
+          <img src="./images/empowerment-icon.svg" alt="accurancy">
+        </div>
+        <h6>empowerment</h6>
+        <p>Feel empowered to take control of your academic success with FirstClassMaterial, empowering you with the tools and resources you need to excel in your studies.</p>
+      </div>
+     </div>
+    </section>
 
 
-<section id="passport">
-<h3>This the passport section</h3>
-<div class="passport-guides">
-<p>Guides</p>
-<ul>
-  <li>Upload the photo you wish to use for your passport 
-    <br>
-    <span>Note: use images with high resolution</span>
-  </li>
-  <li>Select: Crop and upload without removing background</li>
-  <li>Crop the photo with the aid of our online cropping tool</li>
-  <li>We recommend you use an image with white or red backgroud</li>
-  <li>if your image does not have a plain background color as aforementioned above, we recommemd you use the second option which is select and upload an image with removing background</li>
-  <!-- <li>We recommend you use an image with white or red backgroud</li> -->
-</ul>
-</div>
-
-<div>
-  <a href="./passport.html" class="visit-passport-page" >visit passport page</a>
-</div>
-
-
-<!-- <a href="./passport.html" class="cta-btn">visit passport</a> -->
-</section>
-
- 
+    <!-- SUPPORT -->
+    <section class="testimonial-section">
+      <h6>support</h6>
+      <h2>Supported by thousands of students</h2>
+      <div class="grid-container-3">
+        <div class="grid-item">
+          <h3>18.9k</h3>
+          <p>followers on FB</p>
+        </div>
+        <div class="grid-item">
+          <h3>18.9k</h3>
+          <p>followers on IG</p>
+        </div>
+        <div class="grid-item">
+          <h3>18.9k</h3>
+          <p>followers on X</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer-section"></footer>
 </body>
 </html>
