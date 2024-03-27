@@ -88,7 +88,68 @@ text-transform:capitalize;
 }
 
 
+/* TESTIMONIAL STYLES */
+.testimonial-section{
+/* border:1px solid red; */
+}
+.testimonial-section h6{
+text-align:center;
+}
+.testimonial-section .grid-container-3{
+place-items:center;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+}
+.testimonial-section .grid-item p{
+font-size:0.54rem;
+}
+.testimonial-section .grid-item h3{
+margin-bottom:initial;
+color: #2C7E54;
+font-size:1.23rem;
+}
 
+.testimonial-section .card-container .img-container{
+position: relative;
+width:75px;
+height:75px;
+background:url(../images/testimonial-border-style.svg) no-repeat top left/contain;
+padding:0.4rem;
+}
+.testimonial-section .card-container .card-header{
+margin-bottom:1.5rem;
+}
+
+.testimonial-section .inner-flex-container{
+display:flex;
+gap:1.2rem;
+align-items:center;
+}
+.testimonial-section .inner-flex-container h5{
+margin-bottom:initial;
+}
+
+/* PRODUCTS STYLES */
+.products-section h6{
+text-align:center;
+}
+.products-section .card a{
+padding:0;
+}
+.products-section .card{
+box-shadow: 0px 2.454545259475708px 6.545454502105713px 0px #00000026;
+background: #F5F5F5;
+border-radius:12px;
+}
+.products-section .card .card-body{
+padding:1rem;
+}
+.products-section .flex-container-2{
+justify-content:center;
+}
+.products-section .flex-container-2>*{
+flex-basis:38%;
+}
 
 
 
@@ -104,4 +165,14 @@ text-transform:capitalize;
     right:-25px;
     width:280px;
     }
+    .testimonial-section .grid-item p{
+      font-size:0.89rem;
+      }
+      .testimonial-section .grid-item h3{
+      font-size:2rem;
+    }
+     .testimonial-section .flex-container-2>*{
+      /* flex-basis:48%; */
+      margin:2.4rem 0rem;
+   }
  }
