@@ -1,0 +1,100 @@
+
+.footer-container{
+background: #00140A;
+color:#fff;
+}
+.footer-container p,
+.footer-container h5,
+.footer-container a{
+color:#fff;
+}
+.footer-container a{
+display:flex;
+align-items:center;
+/* border:1px solid red; */
+padding:0;
+}
+.footer-container .company-logo .img-container{
+width:45px;
+height:45px;
+/* display:inline-block; */
+}
+.footer-container .company-logo a{
+font-size:1.1rem;
+font-weight:500;
+}
+
+.footer-container .img-container.icon{
+width:25px;
+height:25px;
+}
+.footer-container .break-info{
+ word-break: break-all;
+}
+
+/* CONTACT US */
+.footer-container .flex-container-3>*{
+margin-bottom:2rem;
+}
+
+.footer-container .flex-container-2{
+align-items:flex-start;
+}
+.footer-container .flex-container-2 >*{
+margin-bottom:0.5rem;
+flex-basis: auto;
+}
+.footer-container .social-media {
+margin-top:1.8rem;
+}
+.footer-container .social-media .flex-container-2{
+justify-content:space-between;
+}
+.footer-container .social-media .img-container{
+width:25px;
+height:25px;
+}
+.footer-container .social-media .media-icons{
+display:flex;
+gap:4%;
+}
+
+
+/* TABLET VIEW */
+@media(min-width:710px){
+.footer-container .flex-container-3{
+display:flex;
+flex-flow:row wrap;
+gap:4%;
+}
+.footer-container .flex-container-3>*{
+flex-basis:48%;
+}
+.footer-container .flex-container-3>*:first-child{
+flex-basis:100%;
+}
+/* .footer-container .flex-container-2 */
+
+}
+
+
+/* Dekstop Device */
+@media(min-width:980px){
+.footer-container .flex-container-3{
+align-content:space-between;
+justify-content:space-between;
+align-items:flex-start;
+}
+.footer-container .flex-container-3>*{
+flex-basis:22%;
+}
+.footer-container .flex-container-3>*:first-child{
+flex-basis:48%;
+}
+.footer-container .social-media .flex-container-2>*:first-child{
+order:2;
+}
+.footer-container .social-media .flex-container-2>*:last-child{
+order:1;
+}
+}
