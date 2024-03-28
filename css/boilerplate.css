@@ -43,8 +43,8 @@ html {
     padding: 1.5rem 5%;
     /* border: 1px solid red; */
   }
-  section:not(.subscribe-section, .footer-section, .nav-section) {
-    margin-bottom: 3.4rem;
+  section:not(.subscribe-section,.header-section, .footer-section, .nav-section) {
+    margin-bottom: 3.5rem;
   }
   .subscribe-section {
     /* border: 1px solid green; */
@@ -85,7 +85,7 @@ html {
     line-height: 1.8;
     font-weight:400;
     color: #646464;
-    font-size:0.89rem;
+    font-size:0.75rem;
   }
   .cta-btn,
   button {
@@ -162,6 +162,9 @@ html {
       font-size: 1.4rem;
     }
     p{
+    font-size:1rem;
+    }
+    a{
     font-size:1rem;
     }
     section {
