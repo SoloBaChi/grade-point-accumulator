@@ -18,6 +18,17 @@ color: #2C7E54;
 /* width: 240px; */
 display:inline-block;
 }
+.hero-section .btn-container,
+.services-section .btn-container{
+text-align:center;
+}
+.hero-section h5,
+.hero-section h1{
+text-align:center;
+}
+
+
+/* SERVICES SECTION */
 .services-section p:first-of-type{
 text-align:center;
 }
@@ -37,7 +48,7 @@ align-content:flex-end;
 .services-section .flex-container-2.gp>*:first-child{
 position: relative;
 }
-.services-section .flex-container-2.gp>*:first-child
+/* .services-section .flex-container-2.gp>*:first-child
  .calculated-gp{
 display:inline-block;
 background: #F4F4F4;
@@ -48,9 +59,8 @@ flex-direction:column;
 justify-content: center;
 align-items: center;
 border-radius:7px;
-/* padding:1rem; */
- }
- .services-section .flex-container-2.gp>*:first-child
+ } */
+ /* .services-section .flex-container-2.gp>*:first-child
  .calculated-gp .gp-value{
  padding:1rem;
  border-radius:50%;
@@ -58,15 +68,21 @@ border-radius:7px;
  height:80px;
  display:flex;
  background:url(../images/gp-ellipse.svg) no-repeat center/cover;
- }
- .services-section .flex-container-2.gp>*:first-child
+ } */
+ /* .services-section .flex-container-2.gp>*:first-child
 .calculated-gp h4{
    font-size:1.64rem;
    margin:auto;
-}
-.services-section .flex-container-2.gp>*:first-child
+} */
+/* .services-section .flex-container-2.gp>*:first-child
 .calculated-gp h5{
 font-size:0.785rem;
+} */
+.services-section .flex-wrapper>*{
+margin-bottom:3.5rem;
+}
+.services-section .flex-wrapper>*:last-child{
+margin-bottom:0;
 }
 
 
@@ -155,6 +171,14 @@ flex-basis:38%;
 
 
  @media(min-width:980px){
+  .hero-section h5,
+  .hero-section h1{
+  text-align:initial;
+  }
+  .hero-section .btn-container,
+  .services-section .btn-container{
+  text-align:initial;
+  }
    .services-section .flex-container-2.gp>*:first-child{
       height:350px;
       }
